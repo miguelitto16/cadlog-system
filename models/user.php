@@ -1,45 +1,27 @@
 <?php
-// Inclui o arquivo de conexão que contem a classe Database para gerenciar a conexão com o BD
+ 
 require_once 'models/database.php';
  
-class User
+class user
 {
-    // Função para encontrar um usuário pelo email
-    public static function findByEmail($email){
-        // Coleta a conexão com o BD
-        $conn = Database::getConnection();
- 
-        // Quando utiliza um metodo do PDO utilizamos ->
-        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
- 
-        // Executa a consulta com e-mail passado como parametro
+    public static function FindByEmail($email){
+        $comn = Database::getComnction();
+        $stmt = $comn->prepare("SELECT * FROM usuarios WHERE email = :email");
         $stmt->execute(['email' => $email]);
- 
-        // Retorna os dados do usuário encontrado como um array associativo
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->Fetch(PDO::FETCH_ASSOC);
     }
  
-    static public function find($id){
-        $conn = Database::getConnection();
-        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id"); //os : pratica que determina espaço resenvado
-        $stmt->execute(['id' => $id]); // Executa o select
-        return $stmt->fetch(PDO::FETCH_ASSOC); // Fetch busca uma alteração da última linha
+    public static function Find($id){
+        $comn = Database::getComnction();
+        $stmt = $comn->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->Fetch(PDO::FETCH_ASSOC);
     }
  
-    // Função para criar um novo usuario no banco de dados se não estiver cadastrado
-    // pode usar o mesmo nome da variavel dentro de cada função diferente
     static public function create($data){
-        $conn = Database::getConnection();
-        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, perfil)  VALUES (:nome, :email, :senha, :perfil)");                                   // VALUES quais valores vão entrar na tabela
+        $comn = Database::getComnction();
+        $stmt = $comn->prepare("INSERT INTO usuarios(nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
         $stmt->execute($data);
+   
     }
- 
- 
- 
- 
- 
- 
 }
- 
-
-?>
