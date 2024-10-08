@@ -22,6 +22,6 @@ class user
         $comn = Database::getComnction();
         $stmt = $comn->prepare("INSERT INTO usuarios(nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
         $stmt->execute($data);
-   
+        return $stmt->Fetch(PDO::FETCH_ASSOC);
     }
 }
