@@ -5,6 +5,8 @@
  
     $authController = new AuthController();
     $userController = new  UserController();
+    $dashboardController = new DashboardController();
+ 
     // $dashboardController = new DashboardController();
  
     // coleta a ação da URL, se não ouver ação definida, usa 'login'como padrão
@@ -16,6 +18,9 @@
             break;
         case 'register':
             $userController->register();
+            break;
+        case'dashboard':
+            $dashboardController->index();
             break;
         default:
         $authController->login();
