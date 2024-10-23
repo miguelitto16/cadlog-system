@@ -15,19 +15,24 @@ class AuthController
             // password_verify verifica se a senha corresponde a um hash
             $user = User::FindByEmail($email);
  
-            if($user &&password_verify($senha, $user['senha'])){
+            if($user && password_verify($senha, $user['senha'])){
                 session_start();
                
                 $_SESSION['usuario_id'] = $user['id'];
                 $_SESSION['perfil']     = $user['perfil'];
  
-                header('Location: index.php?actin=dashboard');
+                header('Location: index.php?action=dashboard');
             }else{
                 include 'views/register.php';
             }
         }else{
             include 'views/login.php';
         }
+    }
+    public function logout(){
+        session_start();
+        session_destroy();
+        header('Location: index.php');
     }
 }
  
