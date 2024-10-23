@@ -1,8 +1,10 @@
-# Sistema de Autenticação e Gestão de Usuários
+
+# 🤠   Sistema de Autenticação e Gestão de Usuários
 
 Este é um sistema simples de autenticação de usuários e gestão de perfis, utilizando PHP e MySQL. O sistema conta com diferentes perfis de usuário: **Admin**, **Gestor**, e **Colaborador**, cada um com permissões específicas. Além disso, há funcionalidades de login, logout, cadastro de novos usuários e uma interface para a listagem e gerenciamento dos mesmos.
 
-## Estrutura de Arquivos
+
+# 🏠 Estrutura de Arquivos
 
 ### 1. **AuthController.php**
 Este arquivo contém a lógica de autenticação, incluindo as funcionalidades de login e logout.
@@ -25,7 +27,7 @@ Contém os arquivos HTML responsáveis pela interface visual do sistema:
 ### 7. **Routers.php**
 Este arquivo roteia as ações solicitadas via URL para os respectivos controladores (AuthController, UserController, DashboardController).
 
-# Funcionalidades Principais
+#  🔨 Funcionalidades Principais
 
 O sistema implementa as seguintes funcionalidades:
 
@@ -43,7 +45,7 @@ O sistema oferece a possibilidade de listar todos os usuários cadastrados no ba
 
 ---
 
-# Perfis de Usuário
+# 😐 Perfis de Usuário
 
 O sistema define três perfis principais, cada um com permissões específicas:
 
@@ -69,3 +71,14 @@ O sistema define três perfis principais, cada um com permissões específicas:
   - Acesso a uma versão limitada do painel de controle.
   - Visualização e edição de suas próprias informações.
   - Acesso a relatórios ou funcionalidades operacionais relacionadas ao seu trabalho.
+
+## Tecnologias Utilizadas🔬
+
+- PHP
+- CSS
+- SQL
+
+
+## 😊 Autor
+
+Este projeto foi criado por [Miguel](https://github.com/miguelitto16).
